@@ -2,8 +2,10 @@ use std::fmt;
 #[derive(Debug, Clone)]
 pub enum MovementErrorType
 {
-    OutOfBoard,
-    PieceBlocking {x: i32, y: i32}
+    OutOfBoard (i32, i32),
+    PieceBlocking (i32, i32),
+    DoesNotAllow (i32, i32),
+    NeedsCapture
 }
 
 #[derive(Debug, Clone)]
